@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     var player: AVAudioPlayer!
     var timer = Timer()
-    let eggTimes = ["Soft": 300, "Medium": 420, "Hard": 720]
+    let eggTimes = ["Soft": 3, "Medium": 420, "Hard": 720]
     var totalTime = 0
     var secondsPassed = 0
 
@@ -49,9 +49,12 @@ class ViewController: UIViewController {
     }
     
     func playCompletedSound() {
-        let url = Bundle.main.url(forResource: "alarm_sound", withExtension: "mp3")
-        player = try! AVAudioPlayer(contentsOf: url!)
+        
         player.play()
     }
     
+    override func viewDidLoad() {
+        let url = Bundle.main.url(forResource: "alarm_sound", withExtension: "mp3")
+        player = try! AVAudioPlayer(contentsOf: url!)
+    }
 }
