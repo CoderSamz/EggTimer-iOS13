@@ -10,13 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let softTime = 5
-    let mediumTime = 7
-    let hardTime = 12
+    let eggTimes = ["Soft": 5, "Medium": 7, "Hard": 12]
 
     @IBAction func hardnessSelectors(_ sender: UIButton) {
         if let hardness = sender.currentTitle {
-            
+            print(eggTimes[hardness])
         }
     }
     
