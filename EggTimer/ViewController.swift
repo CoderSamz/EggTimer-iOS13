@@ -14,7 +14,10 @@ class ViewController: UIViewController {
 
     @IBAction func hardnessSelectors(_ sender: UIButton) {
         if let hardness = sender.currentTitle {
-            print(eggTimes[hardness])
+            if let eggTime = eggTimes[hardness] {
+                print(eggTime)
+            }
+            
         }
     }
     
