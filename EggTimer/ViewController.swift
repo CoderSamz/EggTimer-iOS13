@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
+    
     let eggTimes = ["Soft": 3, "Medium": 420, "Hard": 720]
     
     var secondsRemaining = 60
@@ -20,6 +22,7 @@ class ViewController: UIViewController {
     @IBAction func hardnessSelectors(_ sender: UIButton) {
         
         timer.invalidate()
+        progressBar.progress = 1.0
         
         if let hardness = sender.currentTitle {
             if let eggTime = eggTimes[hardness] {
